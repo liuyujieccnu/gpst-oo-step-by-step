@@ -5,7 +5,7 @@ module.exports = class Teacher extends Person {
     constructor(name, age, classes) {
         super(name, age);
         this.clazzes = classes;
-        for(let item of this.clazzes){
+        for (let item of this.clazzes) {
             item.appendTeacher(this);
         }
     }
@@ -22,15 +22,15 @@ module.exports = class Teacher extends Person {
         }
     }
 
-    isTeaching(student){
+    isTeaching(student) {
         return this.clazzes.indexOf(student.clazz) !== -1;
     }
 
-    notifyStudentAppended(str){
-        console.log(`I am ${this.name}. `+str);
+    notifyStudentAppended(str) {
+        console.log(`I am ${this.name}. ` + str);
     }
 
-    notifyLeaderAssigned(str){
-        console.log(`I am ${this.name}. `+str);
+    notifyLeaderAssigned(str) {
+        console.log(`I am ${this.name}. ` + str);
     }
 };

@@ -1,5 +1,5 @@
 // Write your code here
-const Teacher  = require('./teacher');
+const Teacher = require('./teacher');
 const Student = require('./student');
 const Person = require('./person');
 
@@ -10,9 +10,9 @@ module.exports = class Class {
     }
 
     assignLeader(student) {
-        if(this.hasStudent(student)){
+        if (this.hasStudent(student)) {
             this.leader = student;
-            for(let item of this.teacheres){
+            for (let item of this.teacheres) {
                 item.notifyLeaderAssigned(`${student.name} become Leader of Class ${student.clazz.number}`);
             }
             return 'Assign team leader successfully.';
@@ -23,17 +23,17 @@ module.exports = class Class {
 
     appendMember(student) {
         student.clazz = this;
-        for(let item of this.teacheres){
+        for (let item of this.teacheres) {
             item.notifyStudentAppended(`${student.name} has joined Class ${student.clazz.number}`);
         }
     }
 
-    appendTeacher(teacher){
+    appendTeacher(teacher) {
         this.teacheres.push(teacher);
     }
 
-    hasStudent(student){
-        return student.clazz ===this;
+    hasStudent(student) {
+        return student.clazz === this;
     }
 
 
